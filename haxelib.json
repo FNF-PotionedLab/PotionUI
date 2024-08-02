@@ -1,0 +1,11 @@
+{
+	"name": "PotionUI",
+	"url" : "https://github.com/FNF-PotionedLab/PotionUI",
+	"license": "MIT",
+	"tags": ["fnf", "funkin", "potioned", "potion", "ui", "gui", "2d", "game", "openfl", "flixel", "haxeflixel"],
+	"description": "PotionUI is a UI library designed for Funkin Potioned, made in HaxeFlixel",
+	"version": "0.1.0",
+	"releasenote": "Initial release",
+	"contributors": ["swordcube"],
+	"dependencies": {}
+}
