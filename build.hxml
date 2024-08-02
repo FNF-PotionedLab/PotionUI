@@ -1,6 +1,7 @@
 --library lime
 --library openfl
 --library flixel-nova
+--library flixel-addons-nova
 
 --class-path potion
 --define analyzer-optimize

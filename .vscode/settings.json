@@ -16,6 +16,8 @@
 				"openfl",
 				"-lib",
 				"flixel-nova",
+				"-lib",
+				"flixel-addons-nova",
 				"-js",
 				"foo.js",
 				"--remap",
