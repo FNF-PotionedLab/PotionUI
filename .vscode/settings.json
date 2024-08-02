@@ -1,7 +1,6 @@
 {
 	"haxecheckstyle.sourceFolders": [
-		"flixel",
-		"script",
+		"potion",
 		"tests"
 	],
 	"[haxe]": {
@@ -12,9 +11,9 @@
 			"label": "JS",
 			"args": [
 				"-lib",
-				"openfl",
-				"-lib",
 				"lime",
+				"-lib",
+				"openfl",
 				"-lib",
 				"flixel-nova",
 				"-js",

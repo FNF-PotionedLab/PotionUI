@@ -1,0 +1,9 @@
+--library lime
+--library openfl
+--library flixel-nova
+
+--class-path potion
+--define analyzer-optimize
+
+--js foo.js
+--remap flash:openfl

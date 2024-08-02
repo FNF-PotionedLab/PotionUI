@@ -21,6 +21,7 @@ class UICore {
             return;
         }
         initialized = true;
+        FlxG.log.add("PotionUI initialized successfully!");
 
         #if !POTIONED_FRAMEWORK
         FlxG.log.add("You aren't running PotionUI on Funkin Potioned, some features may be missing or behave differently!");

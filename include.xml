@@ -3,5 +3,5 @@
 	<haxelib name="flixel-nova" />
 
 	<assets path="assets" rename="potion" embed="true" />
-	<source path="source" />
+	<source path="potion" />
 </project>

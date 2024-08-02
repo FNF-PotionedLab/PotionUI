@@ -1,4 +1,4 @@
-package source.potion.ui;
+package potion.ui;
 
 enum UIComponentType {
     BUTTON;
