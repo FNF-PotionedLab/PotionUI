@@ -28,7 +28,7 @@ class UICore {
 
         _frontCamera = new FlxCamera();
         _frontCamera.bgColor = 0;
-        FlxG.cameras.add(_frontCamera);
+        FlxG.cameras.add(_frontCamera, false);
 
         FlxG.signals.postStateSwitch.add(() -> {
             if(_frontCamera != null && FlxG.cameras.list.contains(_frontCamera))
@@ -42,7 +42,7 @@ class UICore {
             
             _frontCamera = new FlxCamera();
             _frontCamera.bgColor = 0;
-            FlxG.cameras.add(_frontCamera);
+            FlxG.cameras.add(_frontCamera, false);
 
             _frontGroup.cameras = [_frontCamera];
         });
