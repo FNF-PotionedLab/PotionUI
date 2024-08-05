@@ -1,11 +1,14 @@
 package potion.ui;
 
 import flixel.FlxG;
+import flixel.FlxCamera;
+import flixel.group.FlxGroup;
 import flixel.graphics.FlxGraphic;
 
 /**
  * The core class for PotionUI.
  */
+@:access
 class UICore {
     /**
      * Whether or not PotionUI was initialized.
@@ -21,6 +24,34 @@ class UICore {
             return;
         }
         initialized = true;
+        _frontGroup = new FlxGroup();
+
+        _frontCamera = new FlxCamera();
+        _frontCamera.bgColor = 0;
+        FlxG.cameras.add(_frontCamera);
+
+        FlxG.signals.postStateSwitch.add(() -> {
+            if(_frontCamera != null && FlxG.cameras.list.contains(_frontCamera))
+                FlxG.cameras.remove(_frontCamera);
+
+            for(obj in _frontGroup.members) {
+                if(obj != null)
+                    obj.destroy();
+            }
+            _frontGroup.clear();
+            
+            _frontCamera = new FlxCamera();
+            _frontCamera.bgColor = 0;
+            FlxG.cameras.add(_frontCamera);
+
+            _frontGroup.cameras = [_frontCamera];
+        });
+        FlxG.signals.postUpdate.add(() -> {
+            _frontGroup.update(FlxG.elapsed);
+        });
+        FlxG.signals.postDraw.add(() -> {
+            _frontGroup.draw();
+        });
         FlxG.log.add("PotionUI initialized successfully!");
 
         #if !POTIONED_FRAMEWORK
@@ -47,4 +78,7 @@ class UICore {
     // --------------- //
 
     private static var _cachedGraphics:Map<UIComponentType, FlxGraphic> = [];
+
+    private static var _frontGroup:FlxGroup;
+    private static var _frontCamera:FlxCamera;
 }
